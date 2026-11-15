@@ -1,0 +1,16 @@
+/* 全局基线：清除浏览器默认 body 8px 留白——主布局 height:100vh 依赖贴边铺满，
+   留白会把整页撑出滚动条并在四周露出间隙 */
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* 表格操作列对齐：el-dropdown 包装层自带 vertical-align:top，与相邻 el-button 的
+   middle 不一致，“编辑 | 更多操作”这类混排会整体偏高约 4px；统一拉回 middle。
+   flex 容器（工具栏等）不受 vertical-align 影响，无副作用 */
+.el-dropdown {
+  vertical-align: middle;
+}

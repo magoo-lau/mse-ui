@@ -1,0 +1,28 @@
+/**
+ * 全局外观默认变量：深浅色两套基线。
+ *
+ * 命名空间 --mse-* 供门户主题库（HomeTheme 多维配色）内联覆盖——Layout 根容器绑定
+ * portal.cssVars 后，内联变量对本子树生效且优先级高于此处的默认值；未配置对应维度的
+ * 主题回退到本文件基线，暗色模式（html.dark）自动切换到暗色默认。
+ */
+:root {
+  /* 卡片/面板（首页门户卡、设计器预览等自绘容器） */
+  --mse-card-bg: var(--el-bg-color);
+  --mse-card-border: var(--el-border-color);
+  /* 顶栏/标签栏：半透明 + 毛玻璃透出门户背景 */
+  --mse-navbar-bg: rgba(255, 255, 255, 0.78);
+  --mse-navbar-border: rgba(230, 230, 230, 0.7);
+  --mse-tags-bg: rgba(255, 255, 255, 0.72);
+  /* 侧边栏：默认深色（与历史视觉一致），浅色主题由主题库显式覆盖 */
+  --mse-sidebar-bg: #001529;
+  --mse-sidebar-logo-bg: #002140;
+  --mse-sidebar-text: #bfcbd9;
+  --mse-sidebar-active-text: #ffffff;
+  --mse-sidebar-hover-bg: rgba(255, 255, 255, 0.08);
+  --mse-sidebar-divider: rgba(255, 255, 255, 0.14);
+}
+html.dark {
+  --mse-navbar-bg: rgba(24, 24, 27, 0.8);
+  --mse-navbar-border: rgba(255, 255, 255, 0.1);
+  --mse-tags-bg: rgba(24, 24, 27, 0.75);
+}
